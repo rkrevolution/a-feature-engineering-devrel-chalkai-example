@@ -1,8 +1,12 @@
 # National Parks Travel Forecasting with Chalk
 
-A take-home project for a [Developer Relations role at Chalk](https://docs.chalk.ai). Given a starter Chalk project and access to the National Parks Service API, I built a feature pipeline that answers: **How many hours will a sales rep spend driving between national parks in their state?**
+**As a DevRel, you're expected to do it all: build the thing, write about it, and figure out how to get it in front of the right people.** This repo is an end-to-end example of that workflow -- a technical take-home project that I built, documented, and then planned distribution for, treating it as a real content launch rather than just a code submission.
 
-The use case: a company selling fishing gear sends reps to national parks. Management needs to forecast travel time per state to estimate mileage reimbursement, billable hours, and trip expenses.
+The project itself: given a starter [Chalk](https://docs.chalk.ai) project and the National Parks Service API, I built a feature pipeline that answers **"How many hours will a sales rep spend driving between national parks in their state?"** -- the kind of question a sales manager actually needs answered to plan territories and budget travel expenses.
+
+But the code is only the first layer. Scroll down to see [the technical approach](#my-approach), then [how I'd market this](#how-id-market-this-a-devrel-playbook) as a DevRel teammate.
+
+---
 
 ## What is Chalk?
 
@@ -72,12 +76,18 @@ Starting from Yosemite saves ~3 hours vs. Alcatraz -- it's more centrally locate
 
 ```
 src/
-  models.py      -- Feature definitions (State, Park, ParkPairDriveTime)
-  pipelines.py   -- Resolvers: API fetch, activity filters, Haversine distance,
-                     nearest-neighbor routing
+  models.py               -- Feature definitions (State, Park, ParkPairDriveTime)
+  pipelines.py            -- Resolvers: API fetch, activity filters, Haversine distance,
+                              nearest-neighbor routing
 tests/
-  test_get_parks.py -- Basic resolver test
-chalk.yaml         -- Chalk project config (Python 3.12)
+  test_get_parks.py       -- Basic resolver test
+blog-post.md              -- Structured technical walkthrough
+reference/
+  video-script.md         -- 2-min explainer video script with scene breakdowns
+  remotion-instructions.md -- Full Remotion build guide with Groq TTS integration
+  original-notes.md       -- Raw working notes from the build process
+  assignment-readme.md    -- The original take-home prompt
+chalk.yaml                -- Chalk project config (Python 3.12)
 ```
 
 ### Key design decisions
