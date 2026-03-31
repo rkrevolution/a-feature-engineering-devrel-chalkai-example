@@ -1,0 +1,2 @@
+requests
+chalkpy[runtime]>=2.41.2

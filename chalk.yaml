@@ -1,0 +1,5 @@
+project: Sandbox
+environments:
+  default:
+    runtime: python310
+    requirements: requirements.txt
