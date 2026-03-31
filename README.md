@@ -1,10 +1,18 @@
 # National Parks Travel Forecasting with Chalk
 
+<img src="https://avatars.githubusercontent.com/u/8533812?v=4" width="64" height="64" style="border-radius:50%;" /> **Rob Kleiman** -- DevRel Case Study
+
 **As a DevRel, you're expected to do it all: build the thing, write about it, and figure out how to get it in front of the right people.** This repo is an end-to-end example of that workflow -- a technical take-home project that I built, documented, and then planned distribution for, treating it as a real content launch rather than just a code submission.
 
 The project itself: given a starter [Chalk](https://docs.chalk.ai) project and the National Parks Service API, I built a feature pipeline that answers **"How many hours will a sales rep spend driving between national parks in their state?"** -- the kind of question a sales manager actually needs answered to plan territories and budget travel expenses.
 
 But the code is only the first layer. Scroll down to see [the technical approach](#my-approach), then [how I'd market this](#how-id-market-this-a-devrel-playbook) as a DevRel teammate.
+
+### Video Walkthrough
+
+https://github.com/user-attachments/assets/8c65373e-38a2-4d4e-aff0-155781085fb3
+
+> *2-min explainer built with [Remotion](https://remotion.dev) and [Groq TTS](https://console.groq.com/docs/text-to-speech). Source code in [`marketing/`](marketing/).*
 
 ---
 
