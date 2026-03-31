@@ -1,0 +1,28 @@
+{
+  "name": "marketing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion render src/index.ts NationalParksVideo out/video.mp4",
+    "build:hq": "remotion render src/index.ts NationalParksVideo out/video.mp4 --codec h264 --crf 18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.442",
+    "@remotion/player": "^4.0.442",
+    "groq-sdk": "^1.1.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.442",
+    "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.2"
+  }
+}
