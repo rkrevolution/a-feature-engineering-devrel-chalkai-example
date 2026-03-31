@@ -114,6 +114,68 @@ chalk query --branch parks --in park.id=yose --out park.name --out park.road_tri
 chalk query --branch parks --in state.id=CA --out state.park_count --out state.parks.has_fishing
 ```
 
+## How I'd market this: a DevRel playbook
+
+This project isn't just code -- it's a proof of concept for how I'd approach DevRel at Chalk. Below is the content strategy I'd use to turn a single feature engineering example into a multi-format campaign that drives developer adoption.
+
+### The strategy: Build once, distribute everywhere
+
+One hands-on project generates five content assets, each targeting a different stage of the developer journey:
+
+| Asset | Format | Audience | Goal |
+|---|---|---|---|
+| [Blog post](https://robkleiman.net/writing/chalk-interview-examples-12172025) | Long-form technical writing | Developers evaluating Chalk | Show the "aha moment" -- how little code it takes to go from API to queryable features |
+| [This README](.) | Repo documentation | Developers on GitHub | Time-to-understanding: can someone grok the project in 60 seconds? |
+| [Video explainer](reference/video-script.md) | 2-min Remotion video | Social/landing pages | Visual hook for developers who skim, don't read |
+| [Original working notes](reference/original-notes.md) | Raw build log | Internal team / advanced users | Shows the iteration, the debugging, the real workflow |
+| Code itself | Runnable example | Developers ready to try Chalk | Copy, deploy, query -- working in under 5 minutes |
+
+### Why Remotion for the video?
+
+The video explainer in `reference/` is designed to be built with [Remotion](https://remotion.dev) -- a React framework for programmatic video. I chose it deliberately:
+
+- **Code as content.** The video is a React project. A DevRel teammate can version-control it, review it in PRs, and update it when the product changes. No re-editing in Premiere.
+- **Reproducible narration.** Instead of recording voiceover manually, the build uses [Groq's Orpheus TTS API](https://console.groq.com/docs/text-to-speech) to generate narration from the script text. Change the script, re-run, get new audio. Details in [reference/remotion-instructions.md](reference/remotion-instructions.md).
+- **On-brand for DevRel.** Showing developers that you made a video *with code* is a better signal than a polished Keynote export. It says "I build things with the tools I'm telling you to use."
+- **Scalable pattern.** Once the components exist (map animations, terminal typing effects, code block renderer), you can stamp out videos for every new Chalk feature or integration.
+
+### The content arc
+
+Each asset maps to where a developer is in their journey with Chalk:
+
+```
+Awareness        Consideration         Adoption
+   |                  |                    |
+   v                  v                    v
+ Video           Blog post             This repo
+ (2 min)      (10 min read)       (clone & deploy)
+ "Oh, that's    "I see how the      "I just ran
+  interesting"   pieces fit"         chalk query"
+```
+
+The video gets attention. The blog post builds understanding. The repo closes the loop -- they're running Chalk queries on their own machine.
+
+### Distribution plan
+
+If I were shipping this at Chalk, here's where each piece goes:
+
+1. **Blog post** -- Publish on the Chalk blog and cross-post to personal site. Optimize for "feature engineering tutorial" and "real-time ML features" search terms.
+2. **Video** -- Post to YouTube, embed in the blog post, clip the route animation (Scene 5) as a 15-second loop for Twitter/LinkedIn.
+3. **Repo** -- Link from the blog, pin to GitHub profile, add to Chalk's "Examples" docs section.
+4. **Twitter thread** -- 5 tweets: hook (the business question), the Yosemite vs Alcatraz comparison, a code snippet, a GIF of the route animation, link to blog.
+5. **Docs integration** -- Add this as a "Tutorial: Travel Forecasting" page in the Chalk docs, similar to how Stripe has runnable examples for every API endpoint.
+
+### What this demonstrates
+
+For a DevRel role, the repo shows:
+- **Technical depth** -- Haversine formula, nearest-neighbor routing, Chalk's feature/resolver model
+- **Content creation** -- Blog post, video script, documentation, all from one project
+- **Developer empathy** -- README that answers "what is this?" in the first sentence, "how do I run it?" with copy-paste commands
+- **Go-to-market thinking** -- Content strategy, distribution plan, awareness-to-adoption funnel
+- **Tool fluency** -- Chalk, Python, Remotion, Groq TTS, GitHub -- using the ecosystem a DevRel hire would actually use on the job
+
+---
+
 ## Tech stack
 
 - **[Chalk](https://docs.chalk.ai)** -- feature definitions (`@features`) and resolver pipelines (`@online`)
@@ -121,3 +183,5 @@ chalk query --branch parks --in state.id=CA --out state.park_count --out state.p
 - **[National Parks Service API](https://www.nps.gov/subjects/developer/api-documentation.htm)** -- data source
 - **Haversine formula** -- geospatial distance
 - **Nearest-neighbor heuristic** -- route optimization
+- **[Remotion](https://remotion.dev)** -- programmatic video (React-based)
+- **[Groq Orpheus TTS](https://console.groq.com/docs/text-to-speech)** -- AI-generated narration
